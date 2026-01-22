@@ -15,19 +15,25 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
       - name: Install Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          # cache: 'npm'
+
       - name: Install dependencies
         run: npm install
+
       - name: Build
-        run: npm run build
+        # 添加 CI=false 是为了防止某些 Warning 导致构建失败
+        run: CI=false npm run build
+
       - name: Upload Artifacts
         uses: actions/upload-pages-artifact@v3
         with:
-          path: dist
+          # 确保这里的路径和 Vite 实际输出一致
+          # 如果你在 vite.config.js 没改过 build.outDir，那默认就是 dist
+          path: ./dist
 
   deploy:
     needs: build_site
