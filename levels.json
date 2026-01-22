@@ -1,0 +1,149 @@
+
+[
+  {
+    "id": 1,
+    "name": "几何基础",
+    "levels": [
+      {
+        "id": 101,
+        "title": "1.1 正方形",
+        "description": "利用网格和现有点构造一个正方形。",
+        "lineType": "SEGMENT",
+        "initial": {
+          "points": [{ "x": 1, "y": 1 }, { "x": 4, "y": 1 }],
+          "segments": [{ "p1": { "x": 1, "y": 1 }, "p2": { "x": 4, "y": 1 } }]
+        },
+        "goals": {
+          "segments": [
+            { "p1": { "x": 1, "y": 1 }, "p2": { "x": 1, "y": 4 } },
+            { "p1": { "x": 1, "y": 4 }, "p2": { "x": 4, "y": 4 } },
+            { "p1": { "x": 4, "y": 4 }, "p2": { "x": 4, "y": 1 } }
+          ]
+        }
+      },
+      {
+        "id": 102,
+        "title": "1.2 射线交点",
+        "description": "构造两条射线，使它们在网格中心 (3, 3) 处相交。",
+        "lineType": "RAY",
+        "initial": {
+          "points": [{ "x": 1, "y": 3 }, { "x": 3, "y": 1 }]
+        },
+        "goals": {
+          "points": [{ "x": 3, "y": 3 }]
+        }
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "进阶构图",
+    "levels": [
+      {
+        "id": 201,
+        "title": "2.1 无限直线",
+        "description": "构造一条经过点 (1,1) 和 (2,2) 的直线，观察它在整个网格上的交点。",
+        "lineType": "LINE",
+        "initial": {
+          "points": [
+            { "x": 1, "y": 1, "label": "A" },
+            { "x": 2, "y": 2, "label": "B" }
+          ]
+        },
+        "goals": {
+          "points": [{ "x": 5, "y": 5 }]
+        }
+      },
+      {
+        "id": 202,
+        "title": "2.2 射线构图",
+        "description": "从顶点 A 出发构造两条射线，穿过 B 和 C，找到它们与网格边界的交点。",
+        "lineType": "RAY",
+        "initial": {
+          "points": [
+            { "x": 1, "y": 1, "label": "A" },
+            { "x": 2, "y": 1.5, "label": "B" },
+            { "x": 1.5, "y": 2, "label": "C" }
+          ]
+        },
+        "goals": {
+          "points": [{ "x": 6, "y": 3.5 }, { "x": 3.5, "y": 6 }]
+        }
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "综合挑战",
+    "levels": [
+      {
+        "id": 301,
+        "title": "3.1 垂线交汇",
+        "description": "构造一条过 P 的直线垂直于 AB，观察其所有可能的网格交点。",
+        "lineType": "LINE",
+        "initial": {
+          "points": [
+            { "x": 0, "y": 0, "label": "A" },
+            { "x": 4, "y": 4, "label": "B" },
+            { "x": 0, "y": 4, "label": "P" }
+          ],
+          "segments": [
+            { "p1": { "x": 0, "y": 0 }, "p2": { "x": 4, "y": 4 }, "type": "LINE" }
+          ]
+        },
+        "goals": {
+          "points": [{ "x": 2, "y": 2 }, { "x": 4, "y": 0 }]
+        }
+      },
+      {
+        "id": 302,
+        "title": "302. 角平分线",
+        "description": "构造一个角平分线，且顶点在图外",
+        "lineType": "RAY",
+        "initial": {
+          "points": [],
+          "segments": [
+            {
+              "p1": {
+                "x": 0,
+                "y": 2
+              },
+              "p2": {
+                "x": 1,
+                "y": 0
+              },
+              "type": "SEGMENT"
+            },
+            {
+              "p1": {
+                "x": 0,
+                "y": 2
+              },
+              "p2": {
+                "x": 2,
+                "y": 1
+              },
+              "type": "SEGMENT"
+            }
+          ]
+        },
+        "goals": {
+          "points": [],
+          "segments": [
+            {
+              "p1": {
+                "x": 0,
+                "y": 2
+              },
+              "p2": {
+                "x": 1,
+                "y": 1
+              },
+              "type": "RAY"
+            }
+          ]
+        }
+      }
+    ]
+  }
+]

@@ -1,0 +1,5 @@
+{
+  "name": "GeoGrid: Geometry Master",
+  "description": "A minimalist plane geometry game where you construct shapes on a 7x7 grid, discovering intersections to solve complex geometric puzzles.",
+  "requestFramePermissions": []
+}
